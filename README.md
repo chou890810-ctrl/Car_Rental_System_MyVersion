@@ -1,226 +1,202 @@
-🚗 Gjun Rent 線上租車系統 | 前台預約與下單流程
-<p align="center"> <img src="https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen?style=for-the-badge"> <img src="https://img.shields.io/badge/Java-17-blue?style=for-the-badge"> <img src="https://img.shields.io/badge/MySQL-8.0-orange?style=for-the-badge"> <img src="https://img.shields.io/badge/JPA-Hibernate-red?style=for-the-badge"> <img src="https://img.shields.io/badge/Template-Thymeleaf-009900?style=for-the-badge"> </p> <p align="center"> <b>使用 Spring Boot + Thymeleaf 打造的線上租車預約系統。<br> 我負責「前台會員預約流程 Step1~Step4」全功能實作。</b> </p>
-📑 目錄
+🚗 Gjun Rent 線上租車系統｜會員預約租車流程
+<p align="center"> <img src="https://img.shields.io/badge/Spring%20Boot-3.x-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/> <img src="https://img.shields.io/badge/Java-17-007396?style=for-the-badge&logo=openjdk"/> <img src="https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/> <img src="https://img.shields.io/badge/JPA-Hibernate-59666C?style=for-the-badge&logo=hibernate"/> <img src="https://img.shields.io/badge/Template-Thymeleaf-005F0F?style=for-the-badge&logo=thymeleaf&logoColor=white"/> </p>
 
-📌 專案簡介
+使用 Spring Boot + Thymeleaf 打造的會員預約租車系統。
+我負責前台會員 整個租車流程 Step1 → Step4 全功能開發與整合。
 
-🏗️ 技術架構
+📚 目錄
 
-📂 專案結構
+專案簡介
 
-🚦 功能流程（我負責的部分）
+技術架構
 
-Step1 — 填寫預約資訊
+專案結構（重要）
 
-Step2 — 選擇車款與加購
+功能流程（我負責的部分）
 
-Step3 — 訂單確認
+會員登入機制（JWT + Session）
 
-Step4 — 寫入資料庫並完成
+專案啟動方式
 
-🔐 會員登入機制（JWT + Session）
+我負責的項目總覽
 
-🛠️ 專案啟動方式
+📝 專案簡介
 
-🙋 我負責的項目（面試可直接講）
+Gjun Rent 線上租車系統是一套會員制租車網站。
 
-📌 專案簡介
-
-Gjun Rent 線上租車系統是一套會員制租車服務網站。
 我負責：
 
-前台預約租車 Step1～Step4 全流程
+✔ 完整預約租車流程 (Step1 → Step4)
+✔ 前端頁面 UI 製作 (HTML / CSS / JS)
+✔ 後端 Controller / Service / Repository
+✔ Session 保存預約資料
+✔ JWT 驗證 + 前後端登入整合
+✔ 訂單寫入資料庫、成功頁面顯示
 
-前端 UI + 後端 Controller / Service / Session 整合
+🏗 技術架構
+🔧 後端
 
-會員登入 Token 驗證（JWT → HttpSession）
+Spring Boot 3.x
 
-訂單寫入資料庫與完成頁面顯示
+Spring MVC
 
-此流程完整涵蓋使用者由輸入資料 → 選車 → 確認 → 下單成功。
+Spring Data JPA
 
-🏗️ 技術架構
-後端
-技術	說明
-Spring Boot 3.x	MVC + DI + JPA 基礎架構
-Spring MVC	Controller & Routing
-Spring Data JPA	資料存取（Hibernate）
-MySQL	資料庫
-JWT	登入驗證，讓後端辨識會員
-Thymeleaf	動態頁面模板
-前端
-技術	說明
-HTML / CSS / JavaScript	頁面實作
-jQuery	DOM 操作、AJAX
-SweetAlert2	提示訊息
-Moment.js	日期處理
-Daterangepicker	取還車日期區間選擇
-📂 專案結構（主要部分）
+MySQL
+
+Hibernate
+
+JWT Token 驗證
+
+🎨 前端
+
+Thymeleaf 模板引擎
+
+HTML / CSS
+
+JavaScript
+
+jQuery
+
+AJAX
+
+daterangepicker (日期選擇器)
+
+SweetAlert2 (提示訊息)
+
+📂 專案結構（重要）
 src/main/java/com.demo
- ├── controller
- │    ├── PageController.java          // /reserve 驗證 Token → 開啟 Session
- │    ├── ReserveController.java       // Step1~Step4 租車流程核心
- │
- ├── model
- │    ├── Car.java                     // 車輛資料
- │    ├── Order.java                   // 訂單資料
- │    ├── Member.java                  // 會員資料
- │
- ├── repository
- │    ├── CarRepository.java
- │    ├── OrderRepository.java
- │    ├── MemberRepository.java
- │
- ├── service
- │    ├── CarService.java              // 車款查詢、計算租期
- │    ├── BranchService.java           // 分店資料
- │
-resources/
- ├── templates
- │    ├── reserve.html                 // Step1
- │    ├── reserve-step2.html           // Step2
- │    ├── reserve-step3.html           // Step3
- │    ├── reserve-step4.html           // Step4
- │    └── fragments/header.html
- │
- ├── static/css                        // 各 step CSS
- ├── static/images
- ├── static/js
+│
+├── controller
+│   ├── PageController.java         // /reserve (Step1) 頁面 + Token 驗證
+│   ├── ReserveController.java      // Step2~Step4 控制器
+│   └── OrderController.java        // 我的訂單 API
+│
+├── model
+│   ├── Car.java
+│   ├── Order.java
+│   ├── Member.java
+│   └── ...
+│
+├── repository
+│   ├── CarRepository.java
+│   ├── OrderRepository.java
+│   └── MemberRepository.java
+│
+├── service
+│   ├── CarService.java
+│   ├── OrderService.java
+│   └── ...
+│
+└── util
+    └── JwtUtil.java               // JWT 產生與解析
 
-🚦 功能流程（我負責的部分）
-🟦 Step1 — 填寫預約資訊
+🖼 前端資源（templates / static）
+templates/
+│ reserve.html          // Step1
+│ reserve-step2.html    // Step2
+│ reserve-step3.html    // Step3
+│ reserve-step4.html    // Step4
+│ my-orders.html
+│ my-order-detail.html
+│ fragments/header.html
 
-使用者輸入：
+static/css/
+│ reserve.css
+│ reserve-step2.css
+│ reserve-step3.css
+│ reserve-step4.css
 
-取 / 還車據點
+static/js/
+│ member.js
+│ order.js
 
-取還車日期（Daterangepicker）
+🔵 功能流程（我負責的部分）
+Step1 — 輸入預約資訊
 
-自動生成之時間選單（00:00 ~ 23:30）
-
-車款（五人座、七九人座）
-
-資料存入 Session：
+✔ 取還車據點
+✔ 日期範圍 DateRangePicker
+✔ 自動生成時間
+✔ 車款分類 (五人座 / 七九人座)
+✔ 全部資料寫入 Session
 
 session.setAttribute("pickupLocation", pickupLocation);
 session.setAttribute("dateRange", dateRange);
 session.setAttribute("pickupTime", pickupTime);
 session.setAttribute("carType", carType);
 
-🟩 Step2 — 選擇車款與加購
+Step2 — 選擇車款與加購
 
-後端依照車款查詢：
-
-List<Car> cars = carService.findCarsByType(carType);
-
-
-前端顯示：
-
-車款規格、租金、總金額
-
-隱藏 radio → 點按鈕選擇車輛
-
-加購項目（保險、兒童座椅）
-
-送出後：
+✔ 從資料庫顯示可選車款
+✔ 點擊「確定選擇」 → 設定隱藏 radio
+✔ 加購（保險、兒童座椅）
+✔ 表單送出寫入 Session
 
 session.setAttribute("carId", carId);
 session.setAttribute("insurance", insurance);
 session.setAttribute("childSeatQty", childSeatQty);
 
-🟧 Step3 — 訂單確認頁
+Step3 — 訂單確認頁
 
-從 Session 讀取全部資料：
-
-車輛資訊
-
-取還車日期/時間
-
-加購項目
-
-計算金額
-
-計算租期：
+✔ 自動計算租期
+✔ 計算總金額
 
 long rentalDays = ChronoUnit.DAYS.between(start, end);
-
-
-計算總金額：
-
 int totalAmount = carTotal + seatCost + insuranceCost;
 
 
-顯示最終畫面讓使用者確認。
+✔ 回傳前端顯示確認頁內容
 
-🟥 Step4 — 寫入資料庫，顯示成功頁
+Step4 — 寫入資料庫並完成頁面
 
-產生訂單編號：
+✔ 產生訂單編號
+✔ 寫入 MySQL
+✔ 顯示訂單成功頁面
 
 order.setOrderNo("OD" + System.currentTimeMillis());
-
-
-寫入資料庫：
-
 Order savedOrder = orderRepo.save(order);
 session.setAttribute("latestOrder", savedOrder);
 
-
-成功頁顯示：
-
-訂單資訊
-
-車輛資訊
-
-加購明細
-
-總金額
-
-按鈕：回首頁 / 查看我的訂單
-
-🔐 會員登入機制（JWT → 後端 Session）
-
-1️⃣ 前端登入 → 儲存 Token
-
+🔐 會員登入機制（JWT + Session）
+1️⃣ 前端會員登入 → 接收 Token
 sessionStorage.setItem("jwtToken", data.token);
 
-
-2️⃣ 使用 Token 打開預約頁
-
+2️⃣ 會員進入 /reserve 時附帶 Token
 /reserve?token=xxxxx
 
+3️⃣ 後端處理
 
-3️⃣ 後端：
+✔ 驗證 JWT
+✔ 解析身分證字號
+✔ 查詢會員資料
+✔ 寫入 Session → loginUserId
 
-驗證 JWT
-
-取出身分證字號
-
-查詢會員
-
-寫入 HttpSession（loginUserId）
-
-4️⃣ 租車流程中後端都可辨識使用者身份。
-
-🛠️ 專案啟動方式
-
-匯入為 Maven 專案
+🚀 專案啟動方式
 
 建立 MySQL 資料庫
 
 修改 application.properties
 
-啟動 Spring Boot 主程式
+使用 Spring Boot 啟動後端
 
-前端使用 VS Code Live Server 執行首頁（127.0.0.1:5500）
+VS Code 使用 Live Server 執行前端 (127.0.0.1:5500)
 
 開始預約租車流程
 
-🙋 我負責的項目
+⭐ 我負責的項目總覽
 
-🟨 前台預約流程 Step1~Step4 全部實作
-🟨 日期選擇器、時間自動生成
-🟨 車款查詢 + 加購項目計算
-🟨 Session 儲存跨頁資料
-🟨 JWT 驗證 → 後端 Session 建立
-🟨 訂單資料寫入 MySQL
-🟨 成功頁面呈現與導頁
+預約租車 Step1 ~ Step4 (全部功能)
+
+日期選擇器 + 時間自動生成
+
+車款篩選與金額計算
+
+Session 跨頁資料保存
+
+JWT 驗證與會員登入整合
+
+訂單資料寫入 MySQL
+
+成功頁面設計與顯示
+
+我的訂單 API 與前端串接
