@@ -58,9 +58,10 @@ src/main/java/com.demo
 ---
 
 ## ⭐ 會員租車完整流程（Step1～Step4）
-
+🏠 首頁（Home）
+<img src="IMAGE_01" width="900"> <img src="IMAGE_02" width="900">
 ### 🟦 Step1 — 預約資訊填寫
-
+<img src="IMAGE_03" width="900">
 - 使用者填寫：取／還車據點、日期區間（daterangepicker）、時間（自動時段）、車款類型
 - Controller 接收資料 → 存入 Session
 - 跨步驟保存資料
@@ -68,7 +69,7 @@ src/main/java/com.demo
 ---
 
 ### 🟩 Step2 — 車款選擇 & 加購
-
+<img src="IMAGE_04" width="900">
 - 根據座位數由資料庫撈出車輛：
 
     ```java
@@ -77,13 +78,14 @@ src/main/java/com.demo
         "七九人座", List.of(7, 8, 9)
     );
     ```
-
+Step2-1 加購保險 / 兒童座椅
+<img src="IMAGE_05" width="900">
 - 功能：查看車款卡片（含圖片、租金、排氣量）、選擇加購（保險 / 兒童安全座椅）、選擇結果寫回 Session
 
 ---
 
 ### 🟨 Step3 — 訂單確認頁
-
+<img src="IMAGE_06" width="900">
 - 從 Session 讀取資訊，呈現車款、日期/時間、加購項目、計算租期和總金額
 
     ```java
@@ -94,7 +96,7 @@ src/main/java/com.demo
 ---
 
 ### 🟥 Step4 — 寫入資料庫 & 完成頁
-
+<img src="IMAGE_07" width="900">
 - 訂單存入 MySQL：
 
     ```java
@@ -107,7 +109,11 @@ src/main/java/com.demo
 - 提供「查看我的訂單」/「回首頁」選項
 
 ---
-
+📄 會員訂單列表
+<img src="IMAGE_08" width="900">
+---
+📑 訂單詳細資料
+<img src="IMAGE_09" width="900">
 ## 🔐 會員登入機制（JWT + Session）
 
 1. 前端登入，儲存 Token
