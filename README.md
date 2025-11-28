@@ -59,7 +59,9 @@ src/main/java/com.demo
 
 ## ⭐ 會員租車完整流程（Step1～Step4）
 🏠 首頁（Home）
-<img src="IMAGE_01" width="900"> <img src="IMAGE_02" width="900">
+<img src="https://raw.githubusercontent.com/chou890810-ctrl/Car_Rental_System_MyVersion/master/images/IMAGE_01.png" width="900">
+<img src="https://raw.githubusercontent.com/chou890810-ctrl/Car_Rental_System_MyVersion/master/images/IMAGE_02.png" width="900">
+
 ### 🟦 Step1 — 預約資訊填寫
 <img src="IMAGE_03" width="900">
 - 使用者填寫：取／還車據點、日期區間（daterangepicker）、時間（自動時段）、車款類型
