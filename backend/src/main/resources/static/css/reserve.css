@@ -1,0 +1,71 @@
+@charset "UTF-8";
+body {
+            background: #f4f5f7;
+            font-family: "微軟正黑體", sans-serif;
+        }
+
+        /* 主內容框 */
+        .reserve-box {
+            width: 60%;
+            margin: 10px auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+            padding-bottom: 50px;
+        }
+
+        /* 上方紅色 Banner */
+        .banner {
+            width: 100%;
+            height: 60px;
+            background: #d52222;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 35px 60px;
+        }
+
+        .form-group {
+            width: 30%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+            font-size: 18px;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .submit-btn {
+            padding: 18px 60px;
+            font-size: 22px;
+            font-weight: bold;
+            background: #000;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background: #333;
+        }

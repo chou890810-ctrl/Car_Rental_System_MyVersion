@@ -7,51 +7,8 @@
 
 
     <link th:href="@{/css/reserve-step2.css}" rel="stylesheet" />
-
-    <style>
-        body { background: #f5f5f5; }
-
-        .container-dark {
-            width: 80%;
-            margin: 40px auto;
-            background: #11141A;
-            padding: 40px;
-            border-radius: 12px;
-            color: white;
-        }
-
-        .success-title {
-            font-size: 26px;
-            font-weight: bold;
-            color: #4CAF50;
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .order-box {
-            background: #1A1E24;
-            padding: 25px;
-            border: 1px solid #3A3F47;
-            border-radius: 10px;
-            margin-bottom: 30px;
-        }
-
-        .order-row { margin: 10px 0; }
-        .label { color: #aaa; }
-        .value { color: white; }
-
-        .highlight {
-            font-size: 22px;
-            color: #FF5555;
-            font-weight: bold;
-            text-align: right;
-        }
-
-        .btn-area { text-align: center; margin-top: 40px; }
-        .btn { padding: 12px 30px; border-radius: 6px; text-decoration: none; cursor: pointer; font-size: 16px; margin: 0 10px; }
-        .btn-home { background: #666; color: white; }
-        .btn-order { background: #d52222; color: white; }
-    </style>
+	<link rel="stylesheet" href="/css/reserve-step4.css">
+   
 </head>
 
 <body>
@@ -148,9 +105,9 @@
     </div>
 
     <div class="btn-area">
-        <a href="http://127.0.0.1:5500/index.html" class="btn btn-home">回首頁</a>
+        <a href="http://127.0.0.1:5500/index.html" class="btn btn-blue">回首頁</a>
         
-        <a th:href="@{/my-orders(memberId=${session.loginUserId})}" class="btn btn-order">
+        <a th:href="@{/my-orders(memberId=${session.loginUserId})}" class="btn btn-green">
             查看我的訂單
         </a>
     </div>
